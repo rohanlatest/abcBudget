@@ -1,0 +1,79 @@
+{% extends 'finance_dashboard.html'%}
+
+{%block nav3%}active {%endblock%}
+
+{% block main %}
+
+
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+  <section class="wrapper">
+<h3>Payment Pay</h3>
+    <!-- BASIC FORM ELELEMNTS -->
+    <div class="row mt">
+      <div class="col-lg-12">
+        <div class="form-panel">
+          <h4 class="mb">Payment Pay</h4>
+          <form class="form-horizontal style-form" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Enter amount</label>
+              <div class="col-sm-10">
+                <input type="text" name="amt" class="form-control round-form">
+              </div>
+            </div>
+              <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Transaction Type(full or installment)</label>
+                <div class="col-sm-10">
+                  <input type="text" name="type" class="form-control round-form">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Transaction mode (Cash or online)</label>
+                <div class="col-sm-10">
+                  <input type="text" name="mode" class="form-control round-form">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Enter Transaction Date</label>
+                <div class="col-sm-10">
+                  <input type="date" name="date" class="form-control round-form">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Enter Transaction id</label>
+                <div class="col-sm-10">
+                  <input type="text" name="tran_id" class="form-control round-form">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+              </div>
+
+
+
+          </form>
+        </div>
+      </div>
+
+
+      <!-- col-lg-12-->
+    </div>
+    <!-- /row -->
+  </section>
+
+</section>
+<!-- /wrapper -->
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+
+
+
+
+{% endblock%}

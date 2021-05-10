@@ -1,0 +1,150 @@
+{% extends 'management_dashboard.html'%}
+
+{%block nav2%}active {%endblock%}
+
+{% block main %}
+
+
+<!--sidebar end-->
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3> View Tender Details</h3>
+        <div class="row mb">
+            <!-- page start-->
+            <div class="content-panel">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                        <thead>
+                        <tr>
+                            <th>Budget ID</th>
+
+                            <th>Budget Details </th>
+
+                            <th class="hidden-phone">Value Without GST</th>
+                            <th> GST Amount</th>
+                            <th class="hidden-phone"> Total Amount </th>
+                            <th class="hidden-phone"> Date  </th>
+
+                            <th class="hidden-phone"> Approval Status</th>
+                            <th class="hidden-phone"> Action </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="gradeX">
+                            <td>1</td>
+                            <td>Internet Explorer 4.0</td>
+                            <td class="hidden-phone">Win 95+</td>
+                            <td class="center hidden-phone">4</td>
+                            <td class="center hidden-phone">X</td>
+                            <td class="center hidden-phone">X</td>
+                            <td>
+                                <a href="{% url 'update_budget'%}" class="btn btn-primary btn-xs" style="width:45%"> <i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger btn-xs" style="width:45%"><i class="fa fa-trash-o "></i></a>
+                            </td>
+
+                        </tr>
+                        <tr class="gradeC">
+                            <td>Trident</td>
+                            <td>Internet Explorer 5.0</td>
+                            <td class="hidden-phone">Win 95+</td>
+                            <td class="center hidden-phone">5</td>
+                            <td class="center hidden-phone">C</td>                                                        <td class="center hidden-phone">X</td>
+                            <td>
+                                <a href="{% url 'update_budget'%}" class="btn btn-primary btn-xs" style="width:45%"> <i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger btn-xs" style="width:45%"><i class="fa fa-trash-o "></i></a>
+                            </td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 5.5</td>
+                            <td class="hidden-phone">Win 95+</td>
+                            <td class="center hidden-phone">5.5</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 6</td>
+                            <td class="hidden-phone">Win 98+</td>
+                            <td class="center hidden-phone">6</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 7</td>
+                            <td class="hidden-phone">Win XP SP2+</td>
+                            <td class="center hidden-phone">7</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>AOL browser (AOL desktop)</td>
+                            <td class="hidden-phone">Win XP</td>
+                            <td class="center hidden-phone">6</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 1.0</td>
+                            <td class="hidden-phone">Win 98+ / OSX.2+</td>
+                            <td class="center hidden-phone">1.7</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 1.5</td>
+                            <td class="hidden-phone">Win 98+ / OSX.2+</td>
+                            <td class="center hidden-phone">1.8</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 2.0</td>
+                            <td class="hidden-phone">Win 98+ / OSX.2+</td>
+                            <td class="center hidden-phone">1.8</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+                        <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 3.0</td>
+                            <td class="hidden-phone">Win 2k+ / OSX.3+</td>
+                            <td class="center hidden-phone">1.9</td>
+                            <td class="center hidden-phone">A</td>
+                            <td class="center hidden-phone">X</td>
+
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- page end-->
+        </div>
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+{% endblock%}
+

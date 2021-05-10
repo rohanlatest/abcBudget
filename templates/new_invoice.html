@@ -1,0 +1,364 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav4%}active {%endblock%}
+
+{% block main %}
+
+<section id="main-content" xmlns="http://www.w3.org/1999/html">
+  <section class="wrapper">
+    <h3> Purchase Order </h3>
+    <!-- BASIC FORM ELELEMNTS -->
+    <div class="row mt">
+      <div class="col-lg-12">
+        <div class="form-panel">
+          <h4 class="mb">Invoice </h4>
+          <form class="form-horizontal style-form" method="POST"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+
+              <label class="col-sm-2 col-sm-2 control-label"> Invoice For</label>
+              <div class="col-sm-10">
+
+                {{bookform.invoice_for}}
+
+              </div>
+            </div>
+            <div class="form-group">
+
+              <label class="col-sm-2 col-sm-2 control-label"> Vendor</label>
+              <div class="col-sm-10">
+                {{bookform.vendor}}
+              </div>
+            </div>
+            <div class="form-group">
+
+              <label class="col-sm-2 col-sm-2 control-label"> Cost Center/ Project Number</label>
+              <div class="col-sm-10">
+
+                <!--                                <select class="form-control round-form" name="project" id="id_project">-->
+                <!--                                    {% for i  in item %}-->
+                <!--                                    <option value="{{i.project_no}}">{{i.project_no}}</option>-->
+                <!--                                    {% endfor %}-->
+                <!--                                </select>-->
+                {{bookform.project}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">RML Number </label>
+              <div class="col-sm-10">
+
+                <!--                                <select class="form-control round-form" name="rml" id="id_rml">-->
+                <!--                                    {% for i  in item %}-->
+                <!--                                    <option value="{{i.rml_no}}">{{i.rml_no}}</option>-->
+                <!--                                    {% endfor %}-->
+                <!--                                </select>-->
+
+                {{bookform.rml}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Purchase Order ID</label>
+              <div class="col-sm-10">
+                {{bookform.po_no}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Invoice Date</label>
+              <div class="col-sm-10">
+                {{bookform.invoice_date}}
+              </div>
+            </div>
+            <table class="table" >
+              <thead>
+              <tr>
+                <!--                                <th style="width:60px" class="text-center"> SNo.</th>-->
+                <th style="width:60px" class="text-center">Description</th>
+                <th style="width:60px" class="text-center">Quantity</th>
+                <th style="width:60px" class="text-center">Amount</th>
+                <th style="width:60px" class="text-center">GST Rate</th>
+                <th style="width:60px" class="text-center">CGST</th>
+                <TH style="width:60px" class="text-center">SGST</TH>
+                <TH style="width:60px" class="text-center">IGST</TH>
+                <TH style="width:60px" class="text-center">Total</TH>
+                <TH style="width:60px" class="text-center">Action</TH>
+              </tr>
+              </thead>
+              <tbody>
+              {{ formset.management_form }}
+              {% for form in formset %}
+              <tr class="form-row spacer" id="mytable">
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+
+                      {{form.description}}
+
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{form.quantity}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{form.amount}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{form.gst}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{form.cgst}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{form.sgst}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{form.igst}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{form.total}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="input-group-append">
+                    <button class="btn btn-success add-form-row" onclick="addField(this);">+</button>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Total</label>
+
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{bookform.total_amount}}
+                    </div>
+                  </div>
+
+                </td>
+                <td>
+
+
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{bookform.total_gst}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{bookform.total_cgst}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{bookform.total_sgst}}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      {{bookform.total_igst}}
+                    </div>
+                  </div>
+                </td>
+
+              </tr>
+              </tbody>
+
+            </table>
+            <div align="center" >
+              <button class="btn btn-warning" type="button" onclick="getADD();">Calculate</button>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Total</label>
+              <div class="col-sm-10">
+                {{bookform.grand_total}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Remarks  </label>
+              <div class="col-sm-10">
+                {{bookform.remark}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Due Date  </label>
+              <div class="col-sm-10">
+                {{bookform.due_date}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Terms and Condition   </label>
+              <div class="col-sm-10">
+                {{bookform.terms}}
+              </div>
+            </div>
+            <!--                        <div class="form-group">-->
+            <!--                            <div class="col-sm-10">-->
+            <!--                                <button class="btn btn-primary" type="submit">Submit</button>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <br>
+
+            <div class="row spacer">
+              <div class="col-sm-2 col-sm-2 control-label">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+          <script>
+
+                            function getADD(){
+                                var p=document.getElementById("id_form-TOTAL_FORMS").value;
+                                var q=0;
+                                var t=0;
+                                var g=0;
+                                var g=0;
+                                var c=0;
+                                var s=0;
+                                var i=0;
+                                var ig=0;
+                                var r=0;
+                                for(var i=0;i<p;i++) {
+                                    var q1 = Number(document.getElementById("id_form-"+i+"-quantity").value);
+                                    var t1 = Number(document.getElementById("id_form-"+i+"-amount").value);
+                                    r1= q1*t1;
+                                    var c1 = Number(document.getElementById("id_form-"+i+"-cgst").value);
+                                    var s1 = Number(document.getElementById("id_form-"+i+"-sgst").value);
+                                    var i1 = Number(document.getElementById("id_form-"+i+"-igst").value);
+                                    tot= c1+s1+r1+i1;
+                                    document.getElementById("id_form-"+i+"-total").value = tot;
+                                    r += r1;
+                                    c += c1;
+                                    s += s1;
+                                    ig += i1;
+
+                                }
+                                document.getElementById("id_total_amount").value= r;
+                                document.getElementById("id_total_cgst").value=c;
+                                document.getElementById("id_total_sgst").value=s;
+                                document.getElementById("id_total_igst").value = ig;
+                                var st = r+c+s+ig;
+                                document.getElementById("id_grand_total").value=st;
+
+
+
+                            }
+                        </script>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</section><!--/col-lg-12 mt -->
+<!-- /wrapper -->
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript">
+        function updateElementIndex(el, prefix, ndx) {
+            var id_regex = new RegExp('(' + prefix + '-\\d+)');
+            var replacement = prefix + '-' + ndx;
+            if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
+            if (el.id) el.id = el.id.replace(id_regex, replacement);
+            if (el.name) el.name = el.name.replace(id_regex, replacement);
+        }
+        function cloneMore(selector, prefix) {
+            var newElement = $(selector).clone(true);
+            var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
+            newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {
+                var name = $(this).attr('name')
+                if(name) {
+                    name = name.replace('-' + (total-1) + '-', '-' + total + '-');
+                    var id = 'id_' + name;
+                    $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+                }
+            });
+            newElement.find('label').each(function() {
+                var forValue = $(this).attr('for');
+                if (forValue) {
+                    forValue = forValue.replace('-' + (total-1) + '-', '-' + total + '-');
+                    $(this).attr({'for': forValue});
+                }
+            });
+            total++;
+            $('#id_' + prefix + '-TOTAL_FORMS').val(total);
+            $(selector).after(newElement);
+            var conditionRow = $('.form-row:not(:last)');
+            conditionRow.find('.btn.add-form-row')
+                .removeClass('btn-success').addClass('btn-danger')
+                .removeClass('add-form-row').addClass('remove-form-row')
+                .html('-');
+            return false;
+        }
+        function deleteForm(prefix, btn) {
+            var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+            if (total > 1){
+                btn.closest('.form-row').remove();
+                var forms = $('.form-row');
+                $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+                for (var i=0, formCount=forms.length; i<formCount; i++) {
+                    $(forms.get(i)).find(':input').each(function() {
+                        updateElementIndex(this, prefix, i);
+                    });
+                }
+            }
+            return false;
+        }
+        $(document).on('click', '.add-form-row', function(e){
+            e.preventDefault();
+            cloneMore('.form-row:last', 'form');
+            return false;
+        });
+        $(document).on('click', '.remove-form-row', function(e){
+            e.preventDefault();
+            deleteForm('form', $(this));
+            return false;
+        });
+
+    </script>
+
+
+
+{% endblock%}
+

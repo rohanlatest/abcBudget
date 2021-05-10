@@ -1,0 +1,87 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Budget Management System</title>
+
+    <!-- Favicons -->
+    <link href="{% static 'base/img/favicon.png'%}" rel="icon">
+    <link href="{% static 'base/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'base/lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <!--external css-->
+    <link href="{% static 'base/lib/font-awesome/css/font-awesome.css'%}" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'base/css/style.css'%}" rel="stylesheet">
+    <link href="{% static 'base/css/style-responsive.css'%}" rel="stylesheet">
+    <style>
+
+    /* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="{% static 'base/lib/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'base/lib/bootstrap/js/bootstrap.min.js'%}"></script>
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="{% static 'base/lib/jquery.backstretch.min.js'%}"></script>
+    <script>
+    $.backstretch("{% static 'base/img/login_img.jpg'%}", {
+      speed: 500
+    });
+  </script>

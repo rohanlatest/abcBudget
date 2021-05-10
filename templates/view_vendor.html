@@ -1,0 +1,80 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav6%}active {%endblock%}
+
+{% block main %}
+
+
+<!--sidebar end-->
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3> View Vendor Details</h3>
+        <div class="row mb">
+            <!-- page start-->
+            <div class="content-panel">
+                <div class="adv-table">
+                    {% if info %}
+
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                        <thead>
+                        <tr>
+                            <th> ID</th>
+                            <th> Name </th>
+                            <th> Email </th>
+                            <th> Mobile NO. </th>
+                            <th> PAN </th>
+                            <th> GSTIN  </th>
+                            <th>Blacklist</th>
+
+                            <th> Action </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for s in info %}
+
+                        <tr class="gradeX">
+                            <td>{{s.id}}</td>
+                            <td>{{s.name}} </td>
+                            <td class="hidden-phone">{{s.email}}</td>
+                            <td class="hidden-phone">{{s.mobile}}</td>
+                            <td class="hidden-phone">{{s.pan}}</td>
+                            <td class="hidden-phone">{{s.gstin}}</td>
+                            <td class="hidden-phone">
+                                {% if s.black_list == True %}
+                                YES
+                                {% else %}
+                                NO
+                                {% endif %}</td>
+
+                            <td>
+                                <a class="btn btn-success btn-sm pull-right" type= "checkbox" href="{% url 'blacklist'  s.id%}">Blacklist</a>
+
+                                <a href="{% url 'update_vendor'  s.id%}" class="btn btn-primary btn-xs" style="width:45%"> <i class="fa fa-pencil"></i></a>
+                                <a href="{% url 'delete1' s.id %}" class="btn btn-danger btn-xs" style="width:45%"><i class="fa fa-trash-o "></i></a>
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <h4>no data to show</h4>
+                    {% endif %}
+
+                </div>
+            </div>
+            <!-- page end-->
+        </div>
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+{% endblock%}
+

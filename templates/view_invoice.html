@@ -1,0 +1,62 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav4%}active {%endblock%}
+
+{% block main %}
+
+
+<!--sidebar end-->
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3> View Invoice  Details</h3>
+        <div class="row mb">
+            <!-- page start-->
+            <div class="content-panel">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table" id="hidden-table-info">
+                        <thead>
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Due Date</th>
+                            <th> Project Number</th>
+                            <th> Vendor Name</th>
+
+                            <th>Amount</th>
+                            <th>Action</th>
+
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for s in info %}
+                        <tr class="gradeX">
+                            <td>{{s.id}}</td>
+                            <td>{{s.due_date}}</td>
+                            <td>{{s.project}}</td>
+                            <td>{{s.vendor}}</td>
+                            <td>{{s.total_amount}}</td>
+                            <td><a class="btn btn-primary btn-sm" href="{% url 'view_single_invoice' s.id%}">View</a></td>
+
+
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- page end-->
+        </div>
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+{% endblock%}
+

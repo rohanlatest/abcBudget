@@ -1,0 +1,67 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav2%}active {%endblock%}
+
+{% block main %}
+
+
+<!--sidebar end-->
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3> View Purchase Order Details</h3>
+        <div class="row mb">
+            <!-- page start-->
+            <div class="content-panel">
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table" id="hidden-table-info">
+                        <thead>
+                        <tr>
+
+                            <th>PO Number</th>
+
+                            <th>PO Date </th>
+                            <th> Vendor Name</th>
+
+                            <th> Amount </th>
+                            <th > Action  </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for s in info %}
+
+                        <tr class="gradeX">
+                            <td>{{s.id}}</td>
+                            <td>{{s.po_date}}</td>
+
+                            <td>{{s.vendor}}</td>
+                            <td>{{s.amount}}</td>
+
+
+
+                            <td><a class="btn btn-primary btn-sm" href="{% url 'view_single_purchase_order' s.id%}">View</a></td>
+
+
+                        </tr>
+                        {% endfor %}
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- page end-->
+        </div>
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+{% endblock%}
+

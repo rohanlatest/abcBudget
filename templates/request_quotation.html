@@ -1,0 +1,255 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav1%}active {%endblock%}
+
+{% block main %}
+
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3>Request Quotation </h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb">Request Quotation</h4>
+                    <form class="form-horizontal style-form" method="get">
+                        {% csrf_token %}
+                        <div class="form-group">
+
+                            <label class="col-sm-2 col-sm-2 control-label"> Quotation For</label>
+                            <div class="col-sm-10">
+
+                                <select class="form-control round-form">
+                                    <option>Production Purchase</option>
+                                    <option>Assest Purchase </option>
+                                    <option>Office/OH Purchase</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label class="col-sm-2 col-sm-2 control-label"> Cost Center/ Project Number</label>
+                            <div class="col-sm-10">
+
+                                <select class="form-control round-form">
+                                    <option>Project 1</option>
+                                    <option>Project 2 </option>
+                                    <option>Project 3</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">RML Number </label>
+                            <div class="col-sm-10">
+                                <select class="form-control round-form">
+
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        Particulars<br>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">1</label>
+                            <div class="col-sm-10">
+
+                                <div class="form-inline" role="form">
+                                    <div class="form-group" >
+                                        <label class="sr-only">Name</label>
+                                        <input type="text" class="form-control round-form"  placeholder="Enter Name"></div>
+                                    <a class="btn btn-danger btn-sm pull-right" href="todo_list.html#"><i class="fa fa-trash-o "></i>Delete</a>
+
+                                    <a class="btn btn-success btn-sm pull-right" href="todo_list.html#"><i class="glyphicon glyphicon-plus"></i>Add</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--                        <div class="form-group">-->
+                        <!--                            <label class="col-sm-2 col-sm-2 control-label">1</label>-->
+                        <!--                            <div class="col-sm-6">-->
+                        <!--                                -->
+                        <!--                                <select class="form-control round-form">-->
+                        <!--                                    <option>Choose a Purchase Item</option>-->
+
+                        <!--                                    <option>1</option>-->
+                        <!--                                    <option>2</option>-->
+                        <!--                                    <option>3</option>-->
+                        <!--                                    <option>4</option>-->
+                        <!--                                    <option>5</option>-->
+                        <!--                                </select>-->
+
+                        <!--                            </div>-->
+                        <!--                            <a class="btn btn-danger btn-sm pull-right" href="todo_list.html#"><i class="fa fa-trash-o "></i>Delete</a>-->
+
+                        <!--                                <a class="btn btn-success btn-sm pull-right" href="todo_list.html#"><i class="glyphicon glyphicon-plus"></i>Add</a>-->
+
+                        <!--                        </div>-->
+                        <!--                        <div class="form-group">-->
+                        <!--                            <label class="col-sm-2 col-sm-2 control-label">2</label>-->
+                        <!--                            <div class="col-sm-10">-->
+                        <!--                                <select class="form-control round-form">-->
+
+                        <!--                                    <option>Choose a Purchase Item</option>-->
+                        <!--                                    <option>1</option>-->
+
+                        <!--                                    <option>2</option>-->
+                        <!--                                    <option>3</option>-->
+                        <!--                                    <option>4</option>-->
+                        <!--                                    <option>5</option>-->
+                        <!--                                </select>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+
+                        <!--                        <div class="form-group">-->
+                        <!--                            <label class="col-sm-2 col-sm-2 control-label">3</label>-->
+                        <!--                            <div class="col-sm-10">-->
+                        <!--                                <select class="form-control round-form">-->
+                        <!--                                    <option>Choose a Purchase Item</option>-->
+
+                        <!--                                    <option>1</option>-->
+                        <!--                                    <option>2</option>-->
+                        <!--                                    <option>3</option>-->
+                        <!--                                    <option>4</option>-->
+                        <!--                                    <option>5</option>-->
+                        <!--                                </select>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <hr>
+                        Vendors for sending Request
+
+                        <!--                        <div class="form-group">-->
+                        <!--                            <label class="col-sm-2 col-sm-2 control-label">1</label>-->
+                        <!--                            <div class="col-sm-10">-->
+
+                        <!--                                <div class="form-inline" role="form">-->
+                        <!--                                    <div class="form-group" >-->
+                        <!--                                        <label class="sr-only">Name</label>-->
+                        <!--                                        <input type="text" class="form-control round-form"  placeholder="Enter Name"></div>-->
+                        <!--                                    <div class="form-group">-->
+                        <!--                                        <label class="sr-only">Email address</label>-->
+                        <!--                                        <select class="form-control round-form">-->
+                        <!--                                            <option>Choose a Purchase Item</option>-->
+
+                        <!--                                            <option>1</option>-->
+                        <!--                                            <option>2</option>-->
+                        <!--                                            <option>3</option>-->
+                        <!--                                            <option>4</option>-->
+                        <!--                                            <option>5</option>-->
+                        <!--                                        </select>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">1</label>
+                            <div class="col-sm-10">
+
+                                <div class="form-inline" role="form">
+                                    <div class="form-group" >
+                                        <label class="sr-only">Name</label>
+                                        <input type="text" class="form-control round-form"  placeholder="Enter Name"></div>
+                                    <!--                                    <div class="form-group">-->
+                                    <!--                                        <label class="sr-only" >Email address</label>-->
+                                    <!--                                        <select class="form-control round-form">-->
+                                    <!--                                            <option>Choose a Purchase Item</option>-->
+
+                                    <!--                                            <option>1</option>-->
+                                    <!--                                            <option>2</option>-->
+                                    <!--                                            <option>3</option>-->
+                                    <!--                                            <option>4</option>-->
+                                    <!--                                            <option>5</option>-->
+                                    <!--                                        </select>-->
+                                    <!--                                    </div>-->
+
+                                    <a class="btn btn-danger btn-sm pull-right" href="todo_list.html#"><i class="fa fa-trash-o "></i>Delete</a>
+
+                                    <a class="btn btn-success btn-sm pull-right" href="todo_list.html#"><i class="glyphicon glyphicon-plus"></i>Add</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--                        <div class="form-group">-->
+                        <!--                        <label class="col-sm-2 col-sm-2 control-label">3</label>-->
+                        <!--                        <div class="col-sm-10">-->
+
+                        <!--                            <div class="form-inline" role="form">-->
+                        <!--                                <div class="form-group" >-->
+                        <!--                                    <label class="sr-only">Name</label>-->
+                        <!--                                    <input type="text" class="form-control round-form"  placeholder="Enter Name">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="form-group">-->
+                        <!--                                    <label class="sr-only" >Email address</label>-->
+                        <!--                                    <select class="form-control round-form">-->
+                        <!--                                        <option>Choose a Purchase Item</option>-->
+
+                        <!--                                        <option>1</option>-->
+                        <!--                                        <option>2</option>-->
+                        <!--                                        <option>3</option>-->
+                        <!--                                        <option>4</option>-->
+                        <!--                                        <option>5</option>-->
+                        <!--                                    </select>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <br><br>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Attachment</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control round-form">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Remarks</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control round-form">
+                            </div>
+                        </div>
+                        <!--                        <div class="form-group">-->
+
+                        <!--                            <div class="checkbox">-->
+                        <!--                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="">Terms and Condition</label>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <div class="form-group ">
+                            <label for="agree" class="control-label col-lg-2 col-sm-3">Terms and Conditions</label>
+                            <div class="col-lg-10 col-sm-9">
+                                <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- col-lg-12-->
+        </div>
+        <!-- /row -->
+    </section>
+
+</section>
+<!-- /wrapper -->
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+
+
+{% endblock%}

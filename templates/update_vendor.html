@@ -1,0 +1,114 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav6%}active {%endblock%}
+
+{% block main %}
+
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3>Update Vendor  </h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb">Update Vendor</h4>
+
+                    <form class="form-horizontal style-form" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label"> Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="id_name" name="name"  value="{{form1.name}}" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Email ID  </label>
+                            <div class="col-sm-10">
+                                <input type="email" id="id_email" name="email" value="{{form1.email}}" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Mobile No.</label>
+                            <div class="col-sm-10">
+                                <input type="number" name="mobile" id="id_mobile" value="{{form1.mobile}}" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Address</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="id_address" name="address" value="{{form1.address}}" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2 col-sm-3">Is GST Registered?  </label>
+                            <div class="col-lg-10 col-sm-9">
+                                <input type="checkbox" style="width: 20px" class="checkbox form-control" id="id_is_gst" name="is_gst"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">GSTIN </label>
+                            <div class="col-sm-10">
+                                <input type="text" id="id_gstin" value="{{form1.gstin}}" name="gstin" class="form-control round-form">
+                            </div>
+                        </div>
+                        <hr>
+                        Bank Details
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="id_bank_name" value="{{form1.bank_name}}" name="bank_name" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Account Number</label>
+                            <div class="col-sm-10">
+                                <input type="number" name="account_no" id="id_account_no" value="{{form1.account_no}}" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">IFSC</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="id_ifsc" value="{{form1.ifsc}}" name="ifsc" class="form-control round-form">
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2 col-sm-3">Have PAN?  </label>
+                            <div class="col-lg-10 col-sm-9">
+                                <input type="checkbox" style="width: 20px" class="checkbox form-control" id="ìd_is_pan" name="is_pan"/>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">PAN </label>
+                            <div class="col-sm-10">
+                                <input type="text" id="id_pan" value="{{form1.pan}}" name="pan" class="form-control round-form">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- col-lg-12-->
+        </div>
+        <!-- /row -->
+    </section>
+
+</section>
+<!-- /wrapper -->
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+
+
+{% endblock%}

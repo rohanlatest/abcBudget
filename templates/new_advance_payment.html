@@ -1,0 +1,127 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav5%}active {%endblock%}
+
+{% block main %}
+
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3>Advance Payment Request </h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb"> Advance Payment Request </h4>
+                    <form class="form-horizontal style-form" method="post">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">PO ID </label>
+                            <div class="col-sm-10">
+                                <select class="form-control round-form" name="po_id" id="po_id">
+                                    {% for i  in item1 %}
+                                    <option value="{{i.id}}">{{i.id}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Invoice ID </label>
+                            <div class="col-sm-10">
+                                <select class="form-control round-form" name="invoice_id" id="invoice_id">
+                                    {% for i  in item2 %}
+                                    <option value="{{i.id}}">{{i.id}}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Vendor </label>
+                            <div class="col-sm-10">
+                                <select class="form-control round-form" name="vendor" id="vendor">
+                                    {% for i  in item %}
+                                    <option value="{{i.name}}">{{i.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Payment Amount</label>
+                            <div class="col-sm-10">
+                                <input type="number" name="amount" class="form-control round-form">
+                            </div>
+                        </div>
+
+
+                        <hr>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Payment Terms
+                            </label>
+                            <div class="col-sm-10">
+                                <input type="radio" name="pay_term" id="optionsRadios31" value="Partial Payment" >&nbsp; Partial Payment<br>
+                                <input type="radio" name="pay_term" id="optionsRadios37" value="Full Payment" >&nbsp; Full Payment<br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Payment Due Date</label>
+                            <div class="col-sm-10">
+                                <input type="date" name="due_date" class="form-control round-form">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Payment Type
+                            </label>
+                            <div class="col-sm-10">
+                                <select class="form-control round-form" name="pay_type" id="pay_type">
+
+                                    <option value="RTGS">RTGS</option>
+                                    <option value="NEFT">NEFT</option>
+                                    <option value="Cash">Cash</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Requested Date</label>
+                            <div class="col-sm-10">
+                                <input type="date" name="req_date" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Requested By</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="req_by" class="form-control round-form">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+            <!-- col-lg-12-->
+        </div>
+        <!-- /row -->
+    </section>
+
+</section>
+<!-- /wrapper -->
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+
+
+{% endblock%}

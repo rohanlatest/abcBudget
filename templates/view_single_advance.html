@@ -1,0 +1,78 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav2%}active {%endblock%}
+
+{% block main %}
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <h3> Purchase Order</h3>
+        <div class="row content-panel mt mb">
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Purchase Order ID</h5>
+                <p>{{post.po_id}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Invoice ID</h5>
+
+                <p>{{post.invoice_id}}</p>
+
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Project No.</h5>
+                <p>{{post.project_no}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Vendor Name</h5>
+
+                <p>{{post.vendor}}</p>
+
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Payment terms</h5>
+                <p>{{post.payment_terms}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Payment Mode</h5>
+
+                <p>{{post.payment_type}}</p>
+
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Due Date</h5>
+                <p>{{post.due_date}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Request Date</h5>
+
+                <p>{{post.date}}</p>
+
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary"></h5>
+                <p></p>
+            </div>
+            <br>
+
+
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Request By</h5>
+                <p>{{post.request_by}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary"></h5>
+                <p></p>
+            </div>
+
+        </div>
+
+
+
+    </section>
+    <!-- /wrapper -->
+</section>
+
+
+
+{% endblock%}

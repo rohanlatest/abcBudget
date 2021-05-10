@@ -1,0 +1,312 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav2%}active {%endblock%}
+
+{% block main %}
+
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content" xmlns="http://www.w3.org/1999/html">
+    <section class="wrapper">
+        <h3> Purchase Order </h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb">Purchase Order </h4>
+<!--                    <form class="form-horizontal style-form" method="POST"  enctype="multipart/form-data">-->
+<!--                        {% csrf_token %}-->
+                        <div class="form-group">
+
+                            <label class="col-sm-2 col-sm-2 control-label"> Vendor</label>
+                            <div class="col-sm-10">
+                                {{post.vendor}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label class="col-sm-2 col-sm-2 control-label"> Invoice For</label>
+                            <div class="col-sm-10">
+
+                                {{post.invoice_for}}
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="col-sm-2 col-sm-2 control-label"> Cost Center/ Project Number</label>
+                            <div class="col-sm-10">
+
+                                {{post.project}}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">RML Number </label>
+                            <div class="col-sm-10">
+
+                                {{post.rml}}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Purchase Order Date</label>
+                            <div class="col-sm-10">
+                                {{post.po_date}}
+                            </div>
+                        </div>
+<!--                        <table class="table" >-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!--                                &lt;!&ndash;                                <th style="width:60px" class="text-center"> SNo.</th>&ndash;&gt;-->
+<!--                                <th style="width:60px" class="text-center"> Particulars</th>-->
+<!--                                <th style="width:60px" class="text-center">Taxable Value</th>-->
+<!--                                <th style="width:60px" class="text-center">GST Rate</th>-->
+<!--                                <th style="width:60px" class="text-center">CGST</th>-->
+<!--                                <TH style="width:60px" class="text-center">SGST</TH>-->
+<!--                                <TH style="width:60px" class="text-center">Action</TH>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                            {{ formset.management_form }}-->
+<!--                            {% for form in formset %}-->
+<!--                            <tr class="form-row spacer" id="mytable">-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+
+<!--                                            {{form.particular}}-->
+
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{form.tax_value}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{form.gst}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{form.cgst}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{form.sgst}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+
+
+
+
+<!--                                <td>-->
+<!--                                    <div class="input-group-append">-->
+<!--                                        <button class="btn btn-success add-form-row" onclick="addField(this);">+</button>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+
+<!--                            &lt;!&ndash;                                    {#                                    {{ count }}#}&ndash;&gt;-->
+
+
+<!--                            {% endfor %}-->
+<!--                            <tr>-->
+
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label class="col-sm-2 col-sm-2 control-label">Total</label>-->
+
+<!--                                    </div>-->
+<!--                                </td>-->
+
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{bookform.sub_total}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{bookform.total_gst}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{bookform.total_cgst}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            {{bookform.total_sgst}}-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+
+<!--                            </tr>-->
+<!--                            </tbody>-->
+
+<!--                        </table>-->
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Net Payable Amount</label>
+                            <div class="col-sm-10">
+                                {{post.amount}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Attachments  </label>
+                            <div class="col-sm-10">
+                                {{post.attachment}}
+                            </div>
+                        </div>
+<!--                        &lt;!&ndash;                        <div class="form-group">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <div class="col-sm-10">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                <button class="btn btn-primary" type="submit">Submit</button>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                        <div class="row spacer">-->
+<!--                            <div class="col-4 offset-2">-->
+<!--                                <button type="submit" class="btn btn-block btn-primary">Create</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+
+
+<!--                    <script>-->
+
+<!--                            function getADD(){-->
+<!--                                var p=document.getElementById("id_form-TOTAL_FORMS").value;-->
+
+<!--                                var c=0;-->
+<!--                                var g=0;-->
+<!--                                var s=0;-->
+<!--                                var t=0;-->
+
+
+<!--                                for(var i=0;i<p;i++) {-->
+
+<!--                                    var c1 = Number(document.getElementById("id_form-"+i+"-cgst").value);-->
+<!--                                    c += c1;-->
+<!--                                    var s1 = Number(document.getElementById("id_form-"+i+"-sgst").value);-->
+<!--                                    s += s1;-->
+<!--                                    var t1 = Number(document.getElementById("id_form-"+i+"-tax_value").value);-->
+<!--                                    t += t1;-->
+<!--                                    var g1 = Number(document.getElementById("id_form-"+i+"-gst").value);-->
+<!--                                    g += g1;-->
+
+<!--                                }-->
+
+<!--                                document.getElementById("id_total_gst").value = g;-->
+<!--                                document.getElementById("id_sub_total").value= t;-->
+<!--                                document.getElementById("id_total_cgst").value=c;-->
+<!--                                document.getElementById("id_total_sgst").value=s;-->
+<!--                                document.getElementById("id_amount").value=s+g+t+c;-->
+
+<!--                            }-->
+<!--                        </script>-->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- col-lg-12-->
+        </div>
+        <!-- /row -->
+    </section>
+
+</section>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--<script type="text/javascript">-->
+<!--        function updateElementIndex(el, prefix, ndx) {-->
+<!--            var id_regex = new RegExp('(' + prefix + '-\\d+)');-->
+<!--            var replacement = prefix + '-' + ndx;-->
+<!--            if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));-->
+<!--            if (el.id) el.id = el.id.replace(id_regex, replacement);-->
+<!--            if (el.name) el.name = el.name.replace(id_regex, replacement);-->
+<!--        }-->
+<!--        function cloneMore(selector, prefix) {-->
+<!--            var newElement = $(selector).clone(true);-->
+<!--            var total = $('#id_' + prefix + '-TOTAL_FORMS').val();-->
+<!--            newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {-->
+<!--                var name = $(this).attr('name')-->
+<!--                if(name) {-->
+<!--                    name = name.replace('-' + (total-1) + '-', '-' + total + '-');-->
+<!--                    var id = 'id_' + name;-->
+<!--                    $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');-->
+<!--                }-->
+<!--            });-->
+<!--            newElement.find('label').each(function() {-->
+<!--                var forValue = $(this).attr('for');-->
+<!--                if (forValue) {-->
+<!--                    forValue = forValue.replace('-' + (total-1) + '-', '-' + total + '-');-->
+<!--                    $(this).attr({'for': forValue});-->
+<!--                }-->
+<!--            });-->
+<!--            total++;-->
+<!--            $('#id_' + prefix + '-TOTAL_FORMS').val(total);-->
+<!--            $(selector).after(newElement);-->
+<!--            var conditionRow = $('.form-row:not(:last)');-->
+<!--            conditionRow.find('.btn.add-form-row')-->
+<!--                .removeClass('btn-success').addClass('btn-danger')-->
+<!--                .removeClass('add-form-row').addClass('remove-form-row')-->
+<!--                .html('-');-->
+<!--            return false;-->
+<!--        }-->
+<!--        function deleteForm(prefix, btn) {-->
+<!--            var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());-->
+<!--            if (total > 1){-->
+<!--                btn.closest('.form-row').remove();-->
+<!--                var forms = $('.form-row');-->
+<!--                $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);-->
+<!--                for (var i=0, formCount=forms.length; i<formCount; i++) {-->
+<!--                    $(forms.get(i)).find(':input').each(function() {-->
+<!--                        updateElementIndex(this, prefix, i);-->
+<!--                    });-->
+<!--                }-->
+<!--            }-->
+<!--            return false;-->
+<!--        }-->
+<!--        $(document).on('click', '.add-form-row', function(e){-->
+<!--            e.preventDefault();-->
+<!--            cloneMore('.form-row:last', 'form');-->
+<!--            return false;-->
+<!--        });-->
+<!--        $(document).on('click', '.remove-form-row', function(e){-->
+<!--            e.preventDefault();-->
+<!--            deleteForm('form', $(this));-->
+<!--            return false;-->
+<!--        });-->
+
+    </script>
+
+
+
+
+{% endblock%}

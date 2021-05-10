@@ -1,0 +1,169 @@
+{% extends 'purchase_dashboard.html'%}
+
+{%block nav2%}active {%endblock%}
+
+{% block main %}
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <h3> Purchase Order</h3>
+        <div class="row content-panel mt mb">
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Vendor</h5>
+                <p>{{post.vendor}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Invoice For</h5>
+
+                <p>{{post.invoice_for}}</p>
+
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Project No.</h5>
+                <p>{{post.project}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">RML Number</h5>
+
+                <p>{{post.rml}}</p>
+
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Purchase Order Date</h5>
+                <p>{{post.po_date}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Attachment</h5>
+
+                <p>{{post.attachment}}</p>
+
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary"></h5>
+                <p></p>
+            </div>
+           <br>
+            <table class="table" >
+                <thead>
+                <tr>
+                    <th style="width:60px" >Particulars</th>
+                    <th style="width:60px" >Taxable Value</th>
+                    <th style="width:60px" >IGST</th>
+                    <th style="width:60px" >CGST</th>
+                    <TH style="width:60px" >SGST</TH>
+                </tr>
+                </thead>
+                <tbody>
+                {% for p in post2 %}
+                <tr class="form-row spacer" id="mytable">
+                    <td>
+                        <div class="form-group">
+                            <div>
+
+                                {{p.particular}}
+
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{p.tax_value}}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{p.gst}}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{p.cgst}}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{p.sgst}}
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <!--                                    {#                                    {{ count }}#}-->
+
+
+                {% endfor %}
+                <tr>
+
+                    <td>
+                        <div class="form-group">
+                           Total
+
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{post.sub_total}}
+                            </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{post.total_gst}}
+                            </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{post.total_cgst}}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{post.total_sgst}}
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+                </tbody>
+
+            </table>
+
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Net Payable Amount</h5>
+                <p>{{post.amount}}</p>
+            </div>
+<div class="col-md-6 mt">
+                <h5 class="text-primary"></h5>
+                <p></p>
+            </div>
+
+        </div>
+
+
+
+    </section>
+    <!-- /wrapper -->
+</section>
+
+
+
+{% endblock%}

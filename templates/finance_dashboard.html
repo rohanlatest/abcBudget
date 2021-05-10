@@ -1,0 +1,120 @@
+{% extends 'base1.html'%}
+{% load static%}
+
+{% block title%} Finance Department {%endblock%}
+
+{% block content %}
+<aside>
+  <div id="sidebar" class="nav-collapse ">
+    <!-- sidebar menu start-->
+    <ul class="sidebar-menu" id="nav-accordion">
+      <p class="centered"><a href="#"><img src="{%static 'base1/img/user.png'%}" class="img-circle" height="100" width="100"></a></p>
+      <br><h5 class="centered">Finance Dashboard</h5>
+
+      <li class="sub-menu">
+        <a href="javascript:;"class= "{%block nav1%} {%endblock%}">
+          <i class="fa fa-handshake-o" aria-hidden="true"></i>
+          <span>Tender</span>
+        </a>
+        <ul class="sub">
+          <li><a href="{% url 'tender_payment' %}">Tender Payment</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:;" class= "{%block nav2%} {%endblock%}">
+          <i class="fa fa-university" aria-hidden="true"></i>
+          <span>Bank Terms</span>
+        </a>
+        <ul class="sub">
+          <li><a href="{% url 'bg_acknowledge' %}">BG Acknowledgement </a></li>
+          <li><a href="{% url 'bg_issue' %}">BG Issue</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:;" class= "{%block nav3%} {%endblock%}">
+          <i class="fa fa-money" aria-hidden="true"></i>
+          <span>Payment </span>
+        </a>
+        <ul class="sub">
+          <li><a href="{% url 'payment_req' %}">Payment Request</a></li>
+          <li><a href="{% url 'payment_pending' %}">Pending Payment</a></li>
+
+          <li><a href="{% url 'payment_list' %}">Payment list</a></li>
+
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:;" class= "{%block nav4%} {%endblock%}">
+          <i class="fa fa-file"></i>
+          <span>Purchase Order </span>
+        </a>
+        <ul class="sub">
+          <li><a href="{% url 'ack_app_payment' %}">Acknowledgement and Approval Payment</a></li>
+          <li><a href="{% url 'pending_payment' %}">Pending Payment </a></li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:;" class= "{%block nav5%} {%endblock%}">
+          <i class="fa fa-inr" aria-hidden="true"></i>
+          <span>Cash Management </span>
+        </a>
+        <ul class="sub">
+          <li><a href="{% url 'cash' %}">Cash Transaction</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:;" class= "{%block nav6%} {%endblock%}">
+          <i class="fa fa-inr" aria-hidden="true"></i>
+          <span>Tds </span>
+        </a>
+        <ul class="sub">
+          <li><a href="{% url 'tds' %}">Tds Dashboard</a></li>
+        </ul>
+      </li>
+      
+
+
+      <!--          <li>-->
+      <!--            <a href="inbox.html">-->
+      <!--              <i class="fa fa-envelope"></i>-->
+      <!--              <span>Mail </span>-->
+      <!--              <span class="label label-theme pull-right mail-info">2</span>-->
+      <!--              </a>-->
+      <!--          </li>-->
+      <!--          <li class="sub-menu">-->
+      <!--            <a href="javascript:;">-->
+      <!--              <i class=" fa fa-bar-chart-o"></i>-->
+      <!--              <span>Charts</span>-->
+      <!--              </a>-->
+      <!--            <ul class="sub">-->
+      <!--              <li><a href="morris.html">Morris</a></li>-->
+      <!--              <li><a href="chartjs.html">Chartjs</a></li>-->
+      <!--              <li><a href="flot_chart.html">Flot Charts</a></li>-->
+      <!--              <li><a href="xchart.html">xChart</a></li>-->
+      <!--            </ul>-->
+      <!--          </li>-->
+      <!--          <li class="sub-menu">-->
+      <!--            <a href="javascript:;">-->
+      <!--              <i class="fa fa-comments-o"></i>-->
+      <!--              <span>Chat Room</span>-->
+      <!--              </a>-->
+      <!--            <ul class="sub">-->
+      <!--              <li><a href="lobby.html">Lobby</a></li>-->
+      <!--              <li><a href="chat_room.html"> Chat Room</a></li>-->
+      <!--            </ul>-->
+      <!--          </li>-->
+      <!--          <li>-->
+      <!--            <a href="google_maps.html">-->
+      <!--              <i class="fa fa-map-marker"></i>-->
+      <!--              <span>Google Maps </span>-->
+      <!--              </a>-->
+      <!--          </li>-->
+    </ul>
+    <!-- sidebar menu end-->
+  </div>
+</aside>
+<!--sidebar end-->
+{% block main %}
+
+{% endblock%}
+{% endblock%}

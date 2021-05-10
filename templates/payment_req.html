@@ -1,0 +1,61 @@
+{% extends 'finance_dashboard.html'%}
+
+{%block nav3%}active {%endblock%}
+
+{% block main %}
+
+<!--sidebar end-->
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+  <section class="wrapper">
+    <h3>Payment Request</h3>
+    <div class="row mb">
+      <!-- page start-->
+      <div class="content-panel">
+        <div class="adv-table">
+           {% if info %}
+          <table cellpadding="0" cellspacing="0" border="0" class="display table" id="hidden-table-info">
+            <thead><tr>
+              <th scope="col">id</th>
+              <th scope="col">Request Date</th>
+              <th scope="col">Project Number</th>
+              <th scope="col">Vendor Name</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Requested By</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for s in info %}
+            <tr class="gradeX">
+              <td>{{s.id}}</td>
+              <td>{{s.date}}</td>
+              <td class="hidden-phone">{{s.project_no}}</td>
+              <td class="center hidden-phone">{{s.vendor}}</td>
+              <td class="center hidden-phone">{{s.amount}}</td>
+              <td class="center hidden-phone">{{s.request_by}}</td>
+              <td class="center hidden-phone">{{s.status}}</td>
+              <td><a class="btn btn-success btn-sm pull-right" href="{% url 'process'  s.id%}">Process</a>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+                    <h4>no data to show</h4>
+                    {% endif %}
+        </div>
+      </div>
+      <!-- page end-->
+    </div>
+    <!-- /row -->
+  </section>
+  <!-- /wrapper -->
+</section>
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+{% endblock%}
+

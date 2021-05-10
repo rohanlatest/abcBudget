@@ -1,0 +1,88 @@
+{% extends 'finance_dashboard.html'%}
+
+{%block nav3%}active {%endblock%}
+
+{% block main %}
+
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <h3>Process Payment  </h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb">Process Payment</h4>
+                  <div class="row content-panel mt mb">
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Request Date</h5>
+                <p>{{item.transaction_date}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Request By</h5>
+                <p>{{item.request_by}}</p>
+            </div>
+                    <div class="col-md-6 mt">
+                <h5 class="text-primary">Vendor Name</h5>
+                <p>{{item.vendor}}</p>
+            </div>
+            <div class="col-md-6 mt">
+                <h5 class="text-primary">Payment Type</h5>
+                <p>{{item.payment_type}}</p>
+            </div>
+                    <div class="col-md-6 mt">
+                <h5 class="text-primary">Payment Amount</h5>
+
+                <p>{{item.amount}}</p>
+
+            </div>
+                  </div>
+
+                    <form class="form-horizontal style-form" method="POST">
+                        {% csrf_token %}
+                        <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    TDS Applicable
+  </label>
+</div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label"> TDS Type</label>
+                            <div class="col-sm-10">
+                                <select class="form-select" name="tds_type" aria-label="Default select example">
+  <option selected>-------</option>
+  <option value="194C">194C</option>
+  <option value="194J">194J</option>
+</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Tds Amount  </label>
+                            <div class="col-sm-10">
+                                <input type="number" name="tds" class="form-control round-form">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- col-lg-12-->
+        </div>
+        <!-- /row -->
+    </section>
+
+</section>
+<!-- /wrapper -->
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+
+
+{% endblock%}

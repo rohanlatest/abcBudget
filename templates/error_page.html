@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% load static%}
+
+
+{% block content %}<div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3 p404 centered">
+        <img src="{%static 'base1/img/404.png'%}" alt="">
+        <h1 style="text-color:'black'">DON'T PANIC!!</h1>
+        <h3>The page you are looking for doesn't exist.</h3>
+        <br>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <input type="text" class="form-control" id="form1Name" name="form1Name">
+            <button class="btn btn-theme mt">Search</button>
+          </div>
+        </div>
+        <h5 class="mt">Hey, maybe you will be interested in these pages:</h5>
+        <p><a href="index.html">Index</a> | <a href="#">Sitemap</a> | <a href="contact.html"> Contact</a></p>
+      </div>
+    </div>
+  </div>
+     {% endblock %}

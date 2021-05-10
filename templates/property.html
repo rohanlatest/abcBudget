@@ -1,0 +1,100 @@
+{% extends 'base1.html'%}
+{% load static%}
+
+{% block title%} Tender Form{%endblock%}
+
+{% block content %}
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token%}
+
+        <div class="form-row m-b-55">
+            <div class="name">Name</div>
+            <div class="value">
+                <div class="row row-space">
+                    <div class="col-2">
+                        <div class="input-group-desc">
+                            {{postForm.name}}
+                            <label class="label--desc">name</label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group-desc">
+                            {{postForm.type}}
+                            <label class="label--desc">type </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="name">Status</div>
+            <div class="value">
+                <div class="input-group">
+                    {{postForm.status}}
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="name">Address</div>
+            <div class="value">
+                <div class="input-group">
+                    {{postForm.address}}
+                </div>
+            </div>
+        </div>
+        <!--                        <div class="form-row m-b-55">-->
+        <!--                            <div class="name">Phone</div>-->
+        <!--                            <div class="value">-->
+        <!--                                <div class="row row-refine">-->
+        <!--                                    <div class="col-3">-->
+        <!--                                        <div class="input-group-desc">-->
+        <!--                                            <input class="input&#45;&#45;style-5" type="text" name="area_code">-->
+        <!--                                            <label class="label&#45;&#45;desc">Area Code</label>-->
+        <!--                                        </div>-->
+        <!--                                    </div>-->
+        <!--                                    <div class="col-9">-->
+        <!--                                        <div class="input-group-desc">-->
+        <!--                                            <input class="input&#45;&#45;style-5" type="text" name="phone">-->
+        <!--                                            <label class="label&#45;&#45;desc">Phone Number</label>-->
+        <!--                                        </div>-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                        <div class="form-row">-->
+        <!--                            <div class="name">Subject</div>-->
+        <!--                            <div class="value">-->
+        <!--                                <div class="input-group">-->
+        <!--                                    <div class="rs-select2 js-select-simple select&#45;&#45;no-search">-->
+        <!--                                        <select name="subject">-->
+        <!--                                            <option disabled="disabled" selected="selected">Choose option</option>-->
+        <!--                                            <option>Subject 1</option>-->
+        <!--                                            <option>Subject 2</option>-->
+        <!--                                            <option>Subject 3</option>-->
+        <!--                                        </select>-->
+        <!--                                        <div class="select-dropdown"></div>-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                        <div class="form-row p-t-20">-->
+        <!--                            <label class="label label&#45;&#45;block">Are you an existing customer?</label>-->
+        <!--                            <div class="p-t-15">-->
+        <!--                                <label class="radio-container m-r-55">Yes-->
+        <!--                                    <input type="radio" checked="checked" name="exist">-->
+        <!--                                    <span class="checkmark"></span>-->
+        <!--                                </label>-->
+        <!--                                <label class="radio-container">No-->
+        <!--                                    <input type="radio" name="exist">-->
+        <!--                                    <span class="checkmark"></span>-->
+        <!--                                </label>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <div>
+            <button class="btn btn--radius-2 btn--red" type="submit">Send</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

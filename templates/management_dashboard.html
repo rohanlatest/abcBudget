@@ -1,0 +1,43 @@
+{% extends 'base1.html'%}
+{% load static%}
+
+{% block title%} Management Dashboard {%endblock%}
+
+{% block content %}
+<aside>
+  <div id="sidebar" class="nav-collapse ">
+    <!-- sidebar menu start-->
+    <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="#"><img src="{%static 'base1/img/user.png'%}" class="img-circle" height="100" width="100"></a></p>
+      <h5 class="centered">Management Dashboard</h5>
+
+      <li class="sub-menu">
+        <a href="{% url 'new_budget' %}" class= "{%block nav1%} {%endblock%}">
+          <i class="fa fa-cogs"></i>
+          <span>Prepare Budget</span>
+        </a>
+
+      </li>
+      <li class="sub-menu">
+        <a href="{% url 'view_budget' %}" class= "{%block nav2%} {%endblock%}">
+          <i class="fa fa-money"></i>
+          <span>View Budget</span>
+        </a>
+
+      </li>
+
+      <li class="sub-menu">
+        <a href="javascript:;">
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+          <span>Notification</span>
+        </a>
+
+      </li>
+    </ul>
+    <!-- sidebar menu end-->
+  </div>
+</aside>
+{% block main%}
+{% endblock%}
+
+{% endblock%}

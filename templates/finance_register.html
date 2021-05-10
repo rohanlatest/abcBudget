@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div id="login-page">
+  <div class="container">
+    <form class="form-login" method="POST" >
+      {% csrf_token %}
+      <h2 class="form-login-heading">sign up now</h2>
+      <div class="login-wrap">
+<!--        {{form.first_name}}-->
+<!--        <br>-->
+<!--        {{form.last_name}}-->
+<!--        <br>-->
+<!--        {{form.username}}-->
+<!--        <br>-->
+<!--        {{form.email}}-->
+<!--        <br>-->
+<!--        {{form.password1}}-->
+<!--        <br>-->
+<!--        -->
+<!--        {{form.password2}}-->
+<!--        <br>-->
+
+        {{form.as_p}}
+        <button class="btn btn-theme btn-block" type="submit"> SIGN UP</button>
+        <hr>
+        <div class="registration">
+          Do you have an account?<br/>
+          <a class="" href="{% url 'login' %}">Login</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

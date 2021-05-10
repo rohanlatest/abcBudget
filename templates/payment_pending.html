@@ -1,0 +1,80 @@
+{% extends 'finance_dashboard.html'%}
+
+{%block nav3%}active {%endblock%}
+
+{% block main %}
+
+<!--sidebar end-->
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+<section id="main-content">
+  <section class="wrapper">
+    <h3>Pending Payment </h3>
+    <div class="row mb">
+      <!-- page start-->
+      <div class="content-panel">
+        <div class="adv-table">
+           {% if info %}
+          <table cellpadding="0" cellspacing="0" border="0" class="display table" id="hidden-table-info">
+            <thead>
+              <tr>
+                <th scope="col">Export</th>
+                <th scope="col">id</th>
+                <th scope="col">Request Date</th>
+                <th scope="col">Expected Date of Payment</th>
+                <th scope="col">Requested By</th>
+                <th scope="col">Project Number</th>
+                <th scope="col">Vendor Name</th>
+                <th scope="col">Invoice Number</th>
+                <th scope="col">Amount</th>
+                <th scope="col">TDS</th>
+                <th scope="col">Advance Paid</th>
+                <th scope="col">Net Payment Amount</th>
+                <th scope="col">Status</th>
+                <th scope="col">Balance Payment amount</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for s in info %}
+              <tr class="gradeX">
+                <td><div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </div></td>
+                <td>{{s.id}}</td>
+                <td>{{s.date}}</td>
+                <td>{{s.due_date}}</td>
+                <td>{{s.request_by}}</td>
+                <td>{{s.project_no}}</td>
+                <td>{{s.vendor}}</td>
+                <td>{{s.invoice_id}}</td>
+                <td>{{s.amount}}</td>
+                <td>{{s.tds}}</td>
+                <td>{{s.adv_pay}}</td>
+                <td>{{s.net_pay_amt}}</td>
+                <td>{{s.status}}</td>
+                <td>{{s.bal_pay_amt}}</td>
+                <td><a class="btn btn-success btn-sm pull-right" href="{% url 'pay'  s.id%}">Pay</a></td>
+
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+                    <h4>no data to show</h4>
+                    {% endif %}
+          <br/><br/><br/>
+          <button class="btn btn-primary btn-sm pull-right" href="#">Generate CSV</button>
+        </div>
+      </div>
+      <!-- page end-->
+    </div>
+    <!-- /row -->
+  </section>
+  <!-- /wrapper -->
+</section>
+<!-- /MAIN CONTENT -->
+<!--main content end-->
+{% endblock%}
